@@ -1,0 +1,10 @@
+public class Wall extends Obstacles {
+
+
+    public Wall(Integer height) {
+        this.height = height;
+
+    }
+
+
+}
