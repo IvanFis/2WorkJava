@@ -23,6 +23,7 @@ public class Main {
                     participant.jump(obstacles.getHeight());
                     if (!participant.jump(obstacles.getHeight())) {
                         System.out.println(participant.getName() + " выбывает из испытания!");
+                        participants.remove(participant);
                         break;
                     }
 
@@ -31,6 +32,7 @@ public class Main {
                     if (!participant.run(obstacles.getRange())) {
                         participants.remove(participant);
                         System.out.println(participant.getName() + " выбывает из испытания!");
+                        participants.remove(participant);
                         break;
                     }
                 }
