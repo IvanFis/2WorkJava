@@ -1,0 +1,32 @@
+public abstract class Creatures {
+    private String name;
+
+    private int MAX_RUN_VALUE;
+
+    private int MAX_JUMP_VALUE;
+
+
+    public Creatures(String name, int MAX_JUMP_VALUE, int MAX_RUN_VALUE) {
+        this.name = name;
+        this.MAX_JUMP_VALUE = MAX_JUMP_VALUE;
+        this.MAX_RUN_VALUE = MAX_RUN_VALUE;
+
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMAX_RUN_VALUE() {
+        return MAX_RUN_VALUE;
+    }
+
+    public int getMAX_JUMP_VALUE() {
+        return MAX_JUMP_VALUE;
+    }
+
+    public abstract boolean run(int range);
+
+    public abstract boolean jump(int height);
+}
