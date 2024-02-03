@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Creatures human1 = new Human("Багратион", 2, 500);
+        Creatures cat1 = new Cat("Борис", 700, 5);
+        Creatures robot1 = new Robot("Skynet", 650, 1);
+
+        ArrayList<Creatures> participants = new ArrayList<Creatures>(Arrays.asList(human1, cat1, robot1));
+        System.out.println("Создалась команда. Количество участников:" + participants.size());
+
+        Obstacles wall1 = new Wall(4);
+        Obstacles treadmill1 = new Treadmill(500);
+        // Obstacles wall2 = new Wall(1);
+
+
+        ArrayList<Obstacles> barrier = new ArrayList<Obstacles>(Arrays.asList(wall1, treadmill1));
+
+        for (Creatures participant : participants) {
+            for (Obstacles obstacles : barrier) {
+                if (obstacles instanceof Wall) {
+                    participant.jump(obstacles.getHeight());
+                    if (!participant.jump(obstacles.getHeight())) {
+                        System.out.println(participant.getName() + " выбывает из испытания!");
+                        break;
+                    }
+
+                } else if (obstacles instanceof Treadmill) {
+                    participant.run(obstacles.getRange());
+                    if (!participant.run(obstacles.getRange())) {
+                        participants.remove(participant);
+                        System.out.println(participant.getName() + " выбывает из испытания!");
+                        break;
+                    }
+                }
+            }
+        }
+        System.out.println("Количество оставшихся участников: " + participants.size());
+
+    }
+}
+
