@@ -1,0 +1,8 @@
+public class Treadmill extends Obstacles {
+
+    public Treadmill(Integer range) {
+        this.range = range;
+    }
+
+
+}
