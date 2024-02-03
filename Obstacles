@@ -1,0 +1,16 @@
+public abstract class Obstacles {
+
+
+    protected int range;
+    protected int height;
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    
+}
